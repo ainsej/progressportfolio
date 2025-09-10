@@ -1,10 +1,11 @@
 /* ----- Global Styles ----- */
 :root {
-  --primary: #2563eb;      /* Professional blue */
-  --secondary: #1e40af;    /* Darker blue */
-  --background: #f9fafb;   /* Light gray background */
-  --text: #111827;         /* Dark gray text */
-  --muted: #6b7280;        /* Muted gray text */
+  --primary: #a5b4fc;      /* Soft lavender */
+  --secondary: #f9a8d4;    /* Pastel pink */
+  --accent: #6ecfe7;       /* Mint green */
+  --background: #fdfdfd;   /* Soft white background */
+  --text: #374151;         /* Gentle dark gray */
+  --muted: #9ca3af;        /* Muted gray */
 }
 
 * {
@@ -14,36 +15,40 @@
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Quicksand", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: var(--background);
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 /* ----- Header ----- */
 header {
-  background: var(--primary);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: white;
   text-align: center;
   padding: 3rem 1rem;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 header h1 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   margin-bottom: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 header p {
-  font-size: 1.2rem;
-  color: #e0e7ff;
+  font-size: 1.3rem;
+  color: #fef9f9;
+  opacity: 0.9;
 }
-
-
 
 /* ----- Main Content ----- */
 main {
-  max-width: 800px;
-  margin: 2rem auto;
+  max-width: 850px;
+  margin: 2.5rem auto;
   padding: 1rem;
 }
 
@@ -51,30 +56,55 @@ section {
   background: white;
   padding: 2rem;
   margin-bottom: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
 
 h2 {
   color: var(--secondary);
   margin-bottom: 1rem;
+  font-size: 1.8rem;
+  display: inline-block;
+  padding-bottom: 0.3rem;
 }
 
 /* ----- Footer ----- */
 footer {
   text-align: center;
-  padding: 1rem;
-  background: #e5e7eb;
-  color: var(--muted);
-  font-size: 0.9rem;
+  padding: 1.5rem;
+  background: var(--primary);
+  color: white;
+  font-size: 0.95rem;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  margin-top: 3rem;
+  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.05);
 }
 
+footer a {
+  color: var(--accent);
+  margin: 0 0.5rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ----- Cute Gradient Animation for Headers ----- */
 .animated-gradient {
-  background: linear-gradient(270deg, #6dd5ed, #bd2de5, #e791c8, #c987de, #6dd5ed);
-  background-size: 1000% 1000%;
+  background: linear-gradient(270deg, #ce1b7d, #a5b4fc, #6ee7b7, #3c7eb7);
+  background-size: 600% 600%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: gradientMove 8s ease-in-out infinite;
+  animation: gradientMove 13s ease infinite;
 }
 
 @keyframes gradientMove {
@@ -82,15 +112,67 @@ footer {
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+.confetti-star {
+  position: relative;
+  font-size: 2rem;
+  cursor: pointer;
+  display: inline-block;
+}
 
+/* Hide sparkles by default */
+.sparkle {
+  position: absolute;
+  opacity: 0;
+  font-size: 1.5rem;
+  animation: none;
+}
+
+/* When star is hovered, sparkles animate */
+.confetti-star:hover .sparkle {
+  animation: sparkleBurst 3s ease-out forwards;
+}
+
+.sparkle1 { top: -10px; left: 20px; }
+.sparkle2 { top: 5px; left: -15px; }
+.sparkle3 { top: -20px; left: -5px; }
+
+@keyframes sparkleBurst {
+  0% { opacity: 1; transform: scale(0.5) translateY(0); }
+  100% { opacity: 0; transform: scale(1.5) translateY(-80px); }
+}
+
+
+/* ----- Notice Box (still useful) ----- */
 .under-construction {
   font-size: 1.1rem;
-  color: #b60b0b;
-  background: #fff3cd;
-  border-left: 5px solid #b60b0b;
+  color: #92400e;
+  background: #fef3c7;
+  border-left: 5px solid #f59e0b;
   padding: 1rem;
   margin-top: 1rem;
-  border-radius: 6px;
+  border-radius: 10px;
+  font-weight: 500;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* Add to your styles.css */
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 1.5rem 0;
+  padding: 0;
+  gap: 2rem;
+}
+
+nav a {
+  color: var(--secondary);
+  text-decoration: none;
   font-weight: bold;
-  box-shadow: 0 2px 8px rgba(182, 11, 11, 0.05);
+  font-size: 1.1rem;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: var(--accent);
 }
