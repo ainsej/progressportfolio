@@ -1,0 +1,96 @@
+/* ----- Global Styles ----- */
+:root {
+  --primary: #2563eb;      /* Professional blue */
+  --secondary: #1e40af;    /* Darker blue */
+  --background: #f9fafb;   /* Light gray background */
+  --text: #111827;         /* Dark gray text */
+  --muted: #6b7280;        /* Muted gray text */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ----- Header ----- */
+header {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #e0e7ff;
+}
+
+
+
+/* ----- Main Content ----- */
+main {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+section {
+  background: white;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+  color: var(--secondary);
+  margin-bottom: 1rem;
+}
+
+/* ----- Footer ----- */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #e5e7eb;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.animated-gradient {
+  background: linear-gradient(270deg, #6dd5ed, #bd2de5, #e791c8, #c987de, #6dd5ed);
+  background-size: 1000% 1000%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 8s ease-in-out infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.under-construction {
+  font-size: 1.1rem;
+  color: #b60b0b;
+  background: #fff3cd;
+  border-left: 5px solid #b60b0b;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 6px;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(182, 11, 11, 0.05);
+}
