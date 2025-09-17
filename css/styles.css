@@ -1,5 +1,6 @@
-/* ----- Global Styles ----- */
+/* Main CSS for Ainslee Johnson Portfolio */
 :root {
+  /* Color palette for site */
   --primary: #2b6777;      /* Soft lavender */
   --secondary: #333d4d;    /* Pastel pink */
   --accent: #80c8da;       /* Mint green */
@@ -15,13 +16,14 @@
 }
 
 body {
+  /* Main font and background */
   font-family: "Quicksand", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: var(--background);
   color: var(--text);
   line-height: 1.7;
 }
 
-/* ----- Header ----- */
+/* ----- Header Styles ----- */
 header {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: white;
@@ -47,7 +49,7 @@ header h1, h2 {
   text-align: center;
 }
 
-/* ----- Main Content ----- */
+/* ----- Main Content Styles ----- */
 main {
   max-width: 850px;
   margin: 2.5rem auto;
@@ -76,7 +78,7 @@ h2 {
   padding-bottom: 0.3rem;
 }
 
-/* ----- Footer ----- */
+/* ----- Footer Styles ----- */
 footer {
   text-align: center;
   padding: 1.5rem;
@@ -100,8 +102,7 @@ footer a:hover {
   text-decoration: underline;
 }
 
-
-/* Add to your styles.css */
+/* ----- Navigation Styles ----- */
 nav ul {
   display: flex;
   justify-content: center;
@@ -131,6 +132,7 @@ section, h1, h2, h3, h4, h5, h6 {
   text-align: left;
 }
 
+/* ----- Resume Cards Styles ----- */
 .resume-cards {
   display: flex;
   flex-wrap: wrap;
@@ -184,6 +186,7 @@ section, h1, h2, h3, h4, h5, h6 {
   opacity: 1;
 }
 
+/* ----- Interest Cards Styles (Home Page) ----- */
 .interest-cards {
   display: flex;
   gap: 2rem;
@@ -249,6 +252,7 @@ section, h1, h2, h3, h4, h5, h6 {
 }
 
 .profile-pic {
+  /* Circular profile image styles */
   width: 140px;
   height: 140px;
   object-fit: cover;
@@ -259,7 +263,7 @@ section, h1, h2, h3, h4, h5, h6 {
   margin: 0 auto 1.5rem auto;
 }
 
-/* Remove pointer-events: none (that was breaking it) */
+/* Accent color button styles */
 .button-accent {
   background: var(--accent);
   color: white;
