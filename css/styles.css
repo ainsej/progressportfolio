@@ -195,15 +195,56 @@ section, h1, h2, h3, h4, h5, h6 {
   flex-wrap: wrap;
 }
 .interest-card {
-  width: 100%;
-  max-width: 320px;
-  min-width: 220px;
+  flex: 1 1 45%;
+  max-width: 420px;
+  min-width: 260px;
   height: auto;
-  aspect-ratio: 1.4 / 1;
+  aspect-ratio: 1.2 / 1;
+  margin-bottom: 2rem;
   perspective: 1000px;
   cursor: pointer;
   border-radius: 0;
   display: flex;
+}
+@media (max-width: 900px) {
+  .interest-card {
+    flex: 1 1 100%;
+    max-width: 99vw;
+    min-width: 0;
+    width: 100%;
+    aspect-ratio: unset;
+    height: auto;
+  }
+}
+@media (max-width: 600px) {
+  .interest-cards {
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: center;
+  }
+  .interest-card {
+    flex: 1 1 100%;
+    max-width: 99vw;
+    min-width: 0;
+    width: 100%;
+    aspect-ratio: unset;
+    height: auto;
+  }
+  .card-front, .card-back {
+    font-size: 1.13rem;
+    padding: 1rem 0.7rem;
+    min-height: 150px;
+    height: auto;
+    word-break: break-word;
+    white-space: normal;
+    line-height: 1.6;
+  }
+  .card-front h3 {
+    font-size: 1.22rem;
+  }
+  .flip-arrow {
+    font-size: 1.4rem;
+  }
 }
 
 .card-inner {
@@ -223,7 +264,7 @@ section, h1, h2, h3, h4, h5, h6 {
 .card-front, .card-back {
   position: absolute;
   width: 100%;
-  min-height: 140px;
+  min-height: 180px;
   height: 100%;
   backface-visibility: hidden;
   border-radius: 0;
@@ -234,8 +275,44 @@ section, h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 1rem;
+  padding: 1.3rem 1.1rem;
   word-break: break-word;
+/* --- Responsive Fix for Larger Interest Cards on Small Screens --- */
+@media (max-width: 600px) {
+  .interest-card {
+    max-width: 99vw;
+    min-width: 0;
+    width: 100%;
+    aspect-ratio: unset;
+    height: auto;
+  }
+  .card-front, .card-back {
+    font-size: 1.13rem;
+    padding: 1rem 0.7rem;
+    min-height: 150px;
+    height: auto;
+    word-break: break-word;
+    white-space: normal;
+    line-height: 1.6;
+  }
+  .card-front h3 {
+    font-size: 1.22rem;
+  }
+  .flip-arrow {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .card-front, .card-back {
+    font-size: 1.05rem;
+    padding: 0.7rem 0.2rem;
+    min-height: 120px;
+  }
+  .card-front h3 {
+    font-size: 1.13rem;
+  }
+}
 }
 
 .card-back {
